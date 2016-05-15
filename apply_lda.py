@@ -5,7 +5,7 @@ import numpy as np
 corpus_filename = 'larry.mm'
 dict_filename   = 'larry.dict'
 lda_filename    = 'larry.lda'
-lda_params      = {'num_topics': 12, 'passes': 200, 'alpha': 'auto'}
+lda_params      = {'num_topics': 4, 'passes': 200, 'alpha': 'auto'}
 
 corpus = corpora.MmCorpus(corpus_filename)
 dictionary = corpora.Dictionary.load(dict_filename)

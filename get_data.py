@@ -11,14 +11,15 @@ Output: 'training_data.p' - pickle file containing list of dicts
 
 You must have access to Pocket API (getpocket.com/developers)
 '''
-
+from get_tokens import gain_access
 from pocket import Pocket
 import os
 import pickle
 
 
+
 CONSUMER_KEY = os.environ.get('CONSUMER_KEY')  # Provided by POCKET(see above)
-ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')  # Generate an access key for yourself
+ACCESS_TOKEN = gain_access()  # Generate an access key for yourself
 TRAINING = []
 TEST = []
 
