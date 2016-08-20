@@ -2,6 +2,8 @@ import pickle
 import os
 
 
+access_token = os.environ.get('ACCESS_TOKEN')
+
 class Users(object):
     def __init__(self):
         self.filename = 'pocket_users.p'
@@ -63,4 +65,4 @@ class Users(object):
 
 if __name__ == '__main__':
     people = Users()
-    people.add_user('larry', 'c7112800-b3c5-4c53-04f0-4e126b')
+    people.add_user('larry', access_token)

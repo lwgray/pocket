@@ -3,7 +3,7 @@
 # Python 3.5
 
 '''
-Add Doc String
+clean Data
 '''
 
 import pickle
@@ -25,7 +25,7 @@ def load(filename, datatype):
         'excerpt' --> Use article excerpt for data
         'content' --> Use article text for data
     '''
-    print "Loading Data"
+    print("Loading Data")
     data = []
     with open(filename, 'rb') as dataset:
         original_data = pickle.load(dataset)
@@ -48,7 +48,7 @@ def load(filename, datatype):
 
 
 def preprocess(data, datatype):
-    ''' add docstring '''
+    ''' Preprocess Data '''
     # clean up data
     # words = [clean(x) for x in data[0]]
     words = []
@@ -95,5 +95,5 @@ def clean(data):
 
 if __name__ == '__main__':
     DATA = load('training_data.p', 'excerpt')
-    print 'Loaded Data, Now Processing'
+    print('Loaded Data, Now Processing')
     preprocess(DATA, 'title')
