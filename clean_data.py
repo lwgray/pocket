@@ -3,9 +3,12 @@
 # Python 3.5
 
 '''
-clean Data
+Clean Data by creating bigrams, stemming words,
+and removing stopwords
 '''
 
+import sys
+import argparse
 import pickle
 import re
 from nltk.corpus import stopwords
@@ -51,6 +54,7 @@ def preprocess(data, datatype):
     ''' Preprocess Data '''
     # clean up data
     # words = [clean(x) for x in data[0]]
+    print("Preprocessing")
     words = []
     bar = Bar('Cleaning Article --> ', max=len(data[0]))
     for index, x in enumerate(data[0]):
@@ -75,6 +79,7 @@ def preprocess(data, datatype):
     corpus = [dictionary.doc2bow(w) for w in words]
     # and save in Market Matrix format
     corpora.MmCorpus.serialize('larry.mm', corpus)
+    return
 
 
 def clean(data):
@@ -93,7 +98,17 @@ def clean(data):
     # words = [p_stemmer.stem(w) for w in words]
     return words
 
+
+def main(filename, datatype):
+    '''load and preprocess data'''
+    data = load(filename, datatype)
+    preprocess(data, datatype)
+    return
+
+
 if __name__ == '__main__':
-    DATA = load('training_data.p', 'excerpt')
-    print('Loaded Data, Now Processing')
-    preprocess(DATA, 'title')
+    parser = argparse.ArgumentParser(description='Clean Text and Generate files')
+    parser.add_argument('--filename', '-f', required=True, help='Training or Test Data')
+    parser.add_argument('--datatype', '-d', required=True, help='Options: excerpt, title, or web')
+    args = parser.parse_args()
+    sys.exit(main(args.filename, args.datatype))

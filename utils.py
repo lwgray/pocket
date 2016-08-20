@@ -42,8 +42,17 @@ def get_content(links):
     return
 
 
-if __name__ == '__main__':
+def main(filename):
+    ''' Extract pocket articles' content '''
     with open('training_data.p', 'r') as txt:
         txt = pickle.load(txt)
         urls = get_links(txt)
         get_content(urls)
+    return
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Generate Web Data for topic analysis')
+    parser.add_argument('--filename', '-f', required=True, help='Training or Test Data')
+    args = parser.parse_args()
+    sys.exit(main(args.filename))
