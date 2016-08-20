@@ -12,26 +12,32 @@ Results:
 Using Latent Dirichlet(LDA) and Latent Semantic Analysis(LSA) I performed topic modeling on 1000 articles that I saved over the past three years into my Pocket account. 
 
 With LDS modeling, I found that the central topics were: 
-#  python 
-#  artifical intelligence
-#  machine learning
-#  data science
+-  python 
+-  artifical intelligence
+-  machine learning
+-  data science
 
 
 With LSA modeling, I found that the central topics were:
-#
-#
-#
-#
+-
+-
+-
+-
 
 
 
 Run your own analysis:
 ---------------------
 1.  You need an API account with Pocket
-2.  Gather Training and Test Data :: $ python get_data.py
-3.  Clean Data :: $ python clean_data.py
-4.  Apply LDA or LSA modeling :: $python apply_lda.py
+2.  Gather Training and Test Data
+    :: 
+        $ python get_data.py
+3.  Clean Data 
+    :: 
+        $ python clean_data.py
+4.  Apply LDA or LSA modeling 
+    :: 
+        $ python apply_lda.py
 5.  Visualize results: lda.ipynb or lsa.ipynb
 
 
