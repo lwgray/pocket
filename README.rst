@@ -12,12 +12,17 @@ Results:
 Using Latent Dirichlet(LDA) and Latent Semantic Analysis(LSA) I performed topic modeling on 1000 articles that I saved over the past three years into my Pocket account. 
 
 With LDA modeling, I found that the central topics were: 
-
+--------------------------------------------------------
 .. image:: img/lda.png
 
+
+
 With LSA modeling, I found that the central topics were:
+--------------------------------------------------------
 
 .. image:: img/lsa.png
+
+
 
 Run your own analysis:
 ---------------------
